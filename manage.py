@@ -2,7 +2,9 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-
+# manage.py
+from django.core.management import execute_from_command_line
+from customers.receive_order_request import start_consumer_thread  # Im
 
 def main():
     """Run administrative tasks."""
@@ -20,3 +22,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+    start_consumer_thread()
+    execute_from_command_line(sys.argv)
